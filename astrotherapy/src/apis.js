@@ -1,7 +1,7 @@
 const LOCAL_HOSTNAME = "http://localhost:5000";
 
-export async function getResult() {
-  const result = await makeRequest("");
+export async function getResult(arg) {
+  const result = await makeRequest("", arg ? arg : "arg");
   return result;
 }
 

@@ -7,12 +7,17 @@ import 'antd/dist/antd.css';
 import "@fontsource/open-sans"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const { TextArea } = Input;
 
 
-function confirm(e) {
+function confirm(e, boop) {
+  async function fetchResults() {
+    const results = await getResult(boop);
+    console.log(results);
+  }
+  fetchResults();
   console.log(e);
+  console.log(boop);
   message.success('ur depressed!');
 }
 
@@ -32,7 +37,6 @@ class NameForm extends React.Component {
     this.state = {value: ''};
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   useEffect() {
@@ -46,17 +50,6 @@ class NameForm extends React.Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    async function fetchResults() {
-      const results = await getResult();
-      // this.setState = {value: this.state.value, result: results};
-      console.log(results);
-    }
-    fetchResults();
-    alert('I have received text: ' + this.state.value);
-    event.preventDefault();
   }
 
   render() {
@@ -87,7 +80,7 @@ class NameForm extends React.Component {
               <div class="float-end" style={{padding: '30px'}} > 
                 <Popconfirm
                   title="Are you sure want to submit this?"
-                  onConfirm={confirm}
+                  onConfirm={(e) => confirm(e, this.state.value)}
                   okText="Yes"
                   cancelText="No"
                 >
