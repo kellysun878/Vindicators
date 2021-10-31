@@ -14,11 +14,13 @@ function confirm(e, boop) {
   async function fetchResults() {
     const results = await getResult(boop);
     console.log(results);
+    const res = JSON.stringify(results)
+    return res;
   }
-  fetchResults();
+  const beep = fetchResults();
   console.log(e);
   console.log(boop);
-  message.success('ur depressed!');
+  message.success("Your score is 0.4");
 }
 
 function App() {
@@ -72,6 +74,7 @@ class NameForm extends React.Component {
                     placeholder={'how are you feeling today?'}
                     autoSize={{ minRows: 5, maxRows: 15}}
                     bordered={false}
+                    onChange={(event) => this.handleChange(event)}
                   />
                 </div>
               </div>
@@ -90,7 +93,7 @@ class NameForm extends React.Component {
                   size={'large'}
                   style={{ background: "#43A6C6", borderColor: "#43A6C6" }} 
                   >
-                    create 
+                    submit 
                   </Button>
                 </Popconfirm>
               </div>
