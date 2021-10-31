@@ -1,0 +1,4 @@
+Sentence 0 has a sentiment score of -0.20000000298023224
+Sentence 1 has a sentiment score of -0.8999999761581421
+Sentence 2 has a sentiment score of -0.699999988079071
+Overall Sentiment: score of -0.6000000238418579 with magnitude of 1.7999999523162842
