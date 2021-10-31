@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { Input, Button, Popconfirm, message } from 'antd';
@@ -21,26 +20,6 @@ function App() {
     <>
       <NameForm></NameForm>
     </>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <div>
-    //       <NameForm />
-    //     </div>
-    //     {/* <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //       Hi Sumedh!
-    //     </p> 
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a> */}
-    //   </header>
-    // </div>
   );
 }
 
@@ -100,7 +79,7 @@ class NameForm extends React.Component {
                   type="primary"
                   shape="round"
                   size={'large'}
-                  style={{ background: "#d3d3d3", borderColor: "#d3d3d3" }} 
+                  style={{ background: "#43A6C6", borderColor: "#43A6C6" }} 
                   >
                     create 
                   </Button>
